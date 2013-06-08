@@ -18,4 +18,7 @@ public class BlockOreCobalt extends Block {
         this.blockIcon = par1IconRegister.registerIcon(Reference.MODID + ":" + (this.getUnlocalizedName().substring(5)));
     }
 	
+	public static boolean LoadedSucessful(){
+		return true;
+	}
 }

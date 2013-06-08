@@ -6,6 +6,8 @@ import net.minecraft.block.Block;
 
 public class ModBlocks {
 	
+	public static Boolean BORloadedS;
+	
 	public static Block OreCobalt;
 
 	public static void init() {
@@ -15,7 +17,24 @@ public class ModBlocks {
 		GameRegistry.registerBlock(OreCobalt, "orecobalt");
 		
 		LanguageRegistry.addName(OreCobalt, "Cobalt Ore");
-		 
+		
+		BlockOreCobaltLoadedSucessful();
+		
 	 }
+	
+	public static void BlockOreCobaltLoadedSucessful(){
+		if(BlockOreCobalt.LoadedSucessful()) {
+			System.out.println("[MoreCobalt] Block Ore Cobalt loaded Sucessful!");
+			BORloadedS = true;
+		}else{
+			System.out.println("[MoreCobalt] Block Ore Cobalt load Failed!");
+			BORloadedS = false;
+			
+		}
+	}
+	
+	public static boolean initSucessful(){
+		return true;
+	}
 	
 }

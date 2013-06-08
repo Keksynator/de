@@ -34,6 +34,7 @@ public class MoreCobalt {
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event) {
 
+		
 	}
 	
 	@Init
@@ -42,7 +43,37 @@ public class MoreCobalt {
 		ModBlocks.init();
 		ModItems.init();
 		
+		
 		LanguageRegistry.instance().addStringLocalization("itemGroup.tabMoreCobalt", "en_US", "More Cobalt");
+	
+		BlockInitSucessful();
+		ItemInitSucessful();
+		BeSafeAllLoaded();
+		
+	}
+	
+	public void BlockInitSucessful(){
+		if(ModBlocks.initSucessful()){
+			System.out.println("[MoreCobalt] Block Init Sucessful!");
+		}
+		else{
+			System.out.println("[MoreCobalt] Block Init Failed!");
+		}
+	}
+	
+	public void ItemInitSucessful(){
+		if(ModItems.initSucessful()){
+			System.out.println("[MoreCobalt] Item Init Sucessful!");
+		}
+		else{
+			System.out.println("[MoreCobalt] Item Init Failed!");
+		}
+	}
+	
+	public void BeSafeAllLoaded(){
+		while(ModBlocks.BORloadedS == false){
+			System.out.println("[MoreCobalt] Block Ore Cobalt FAILED!!!");
+		}
 	}
 	
 	@PostInit

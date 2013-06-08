@@ -6,4 +6,8 @@ public class ModItems {
 		 
 	 }
 		
+	 public static boolean initSucessful(){
+			return true;
+		}
+	 
 }
